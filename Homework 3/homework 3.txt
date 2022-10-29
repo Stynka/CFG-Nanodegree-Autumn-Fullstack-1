@@ -1,0 +1,116 @@
+HOMEWORK Specialisation WEEK 3 - Justyna Janiszewska
+
+1.What is OOP? How may you have already made use of it (e.g. class components)?
+
+OOP stands for Object-Oriented-Programming and it is a programming language model for software design that revolves around objects and data instead of functions and logic. In other words it focuses on what the developer wants to manipulate instead of how they are going to manipulate it. OOP is well suited for large, complex programs that are actively updated or maintained. An object could be anything between a physical entity (ex.human) to a small computer programme. OOP is based on 4 main principles: Polymorphism, Abstraction, Inheritance, Encapsulation. Programming languages designed for OOP are: Java, Python, C++. Other languages like for example JavaScript pairs with OOP. 
+
+OOP’s benefits code reusability, efficiency, scalability, productivity, security and flexibility. OOP is also useful for collaborative development. 
+
+To create Objects programmatically we need Class- it’s a template for creating objects. 
+
+2. What is Polymorphism?
+
+Polymorphism, from Greek, means many forms: poly= many , morphism= forms. Polymorphism is a method in OOP that does different things depending on the class of the object which calls it. 
+It is a group of objects that share the same behaviors. It could be an array of objects that have the same parent together and work with them together. 
+It is writing the same block of code (multiplying it) and giving it the same name but allowing it to take a slightly different argument/variable/input and then the programme will know which version of that block of code to use. 
+
+It’s possible to have  a method in the child class and override the method in the parent class. A child class is then created, which extends the functionality of the parent class. 
+
+3. What is Abstraction?
+
+Mechanism of an object is revealed in order to share/show mechanisms that are relevant for the use of other objects, at the same time hiding unnecessary implementation of the code. 
+
+Every little block of code/method/function should do a bunch of stuff but this ‘stuff’ is unimportant to the input and the output. Abstraction is when there is a process hidden from the user and the programmer. Abstraction is hiding away functionality. 
+
+4. What is Inheritance?
+
+Inheritance allows a user to have code reusability. It is useful when a user wants to build a new class using  attributes of an existing class but wants to add additional features to it. Classes that would derive from an existing class are called child class, subclass, extended class. 
+
+5. What is Encapsulation?
+
+It reduces dependency between objects by hiding the internal representation of an object behind a specific method. It means that users use an item through an object’s method rather than through the direct object attributes. The item can be used through a set of simple actions, with no need of knowing the internals. 
+Analogy: if the mechanic of a car changes something in the system, the user does not need to learn how to drive a car again.
+
+Concerns: 
+OOP has been critisesed by the developers. One of the maine concerns raised are that:
+- it overemphasize the data component of software development, ignoring the computation and algorithm components. 
+- the complexity of writing an OOP code
+- the time to compile. 
+
+6. What is:
+
+Agile development?
+
+AGILE development-  it’s when each product goes through structured stages of development. It contains six stages: concept, inception, iteration, release, maintenance and retirement. The approach focuses on people doing the work and how they work together. It is based on collaboration and self-organising teams.  It also focuses on helping one- another in the process of developing. 
+- tasks are divided into smaller parts and are frequently assessed to adopt new plans (in order to keep developing the project). It is quick and well coordinated.
+Structure: Requirement←→design and architecture←→Development←→Test and feedback←→requirements etc….
+-Value is delivered to a customer in small and regular increments
+- customer feedback is taken an customer collaboration 
+- then the product owner take the feedback from the customers and stakeholders and creates a list of features to the product(product backlog) and process keeps repeating
+
+Method: 
+SCRUM- a method that is part of agile and it focuses on software development.
+
+Agile team:
+Product owner - person who has an idea for a software 
+team -Developers
+Customer- user of the product
+
+Scrum master - is  a person who takes care of facilitating all the procedures in the working team. 
+Scrum team works in sprints 2-4 weeks periods
+Print planning meeting (before every sprint)---the team creates prioritise list of features to be added from the product backlog).
+
+Daily scrum meeting — each team member answers 3 questions: 
+What did you do yesterday?
+What will you do today?
+What are the impediments in your way? 
+
+Post- sprint activities:
+-Reviews are held - focuses on what was accomplished during sprint- demo of features.
+-Retrospective - focuses on contemplation on what went well and what went bad and what can be improved.
+
+Waterfall development?
+
+It is a method in developing software. It is believed to be the first model in software engineering, originating from mechanical engineering.  It’s a sequential design process, meaning that the early fases define the later ones.  Which means that the output of one phase will be an input of the next phase. It is a model that divides the life cycle into a set of phases. 
+
+How do they differ? Which is suited for which situation?
+
+Both Agile and Waterfall development methods try to solve the same problem - how to turn an idea into a reality. There are three main themes that separate waterfall and agile: scale, duration and quality.
+
+ Agile is about:
+- fast iteration 
+- incorporating feedback based of the results 
+- freakwent updates in order to get into the market fast
+- the idea is to adapt to a new user asap
+- deploy fast
+- high flexibility
+- short term deadlines which encourages creativity
+- includes the client at every step of the development
+- budget is usually flexible
+
+Waterfall is about: 
+- completeness  
+- it’s about getting it right in the first place 
+- low flexibility
+- it is sequential, means that there has to be a thorough planning and documenting
+- it needs more accurate estimation and approval to start 
+- there are usually multiple teams working on it 
+- each team creates documentation 
+- duration is a main difference between agile and waterfall 
+- quality: it is about predictability 
+- testing documentation:  maintainable mens durable
+- quality is more important to speed
+- emphasis on testing
+- each phase of the process is clearly defined and is proceed one at a time
+- the habit is: define before design → design before code
+- no feedback path
+- it does not involve the client 
+- budget is usually fixed
+
+Agile development methodology leaves a lot of room for changes, so it is suited for projects that need more research and testing. This type of management is best for teams that want to work fast and don’t know yet what the final project will look like. Waterfall methodology in the other hand is better for projects with a defined goal, when there won’t be changes during the process of developing it. 
+
+
+
+
+
+
