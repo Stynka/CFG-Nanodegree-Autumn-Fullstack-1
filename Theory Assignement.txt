@@ -1,0 +1,227 @@
+THEORY QUESTIONS ASSIGNMENT 
+Full Stack Stream (Maximum Score: 100)
+
+KEY NOTES
+There are 8 questions in total and each question is marked on a scale 1 to 20
+The maximum possible grade for this assignment is 100 points.
+● Students are welcome to use any online or written resources to answer these questions.
+● The answers need to be explained clearly and illustrated with relevant examples where necessary. Your examples can include code snippets, diagrams or any other evidence-based representation of your answer.
+1. What is React? (E.g. Consider: what is it? What is the benefit of using it? What is its virtual DOM? Why would someone choose it over the standard HTML / CSS stack?) (15 marks)
+
+React is a Java Script (JS)  library for building User Interfaces (UI). Developed by Facebook and released in 2013.It is used to build components that represent logical reusable parts of the UI. The components in React has been brought down to its theoretical minimum. It’s just a JS function. The return from this function is html  or UI which is written in a special syntax called JSX, which allows to easily combine JS with HTML markup.
+React is component- base which means that the code is broke into components. 
+React is declarative, which means the user writes what they want the html to look like and say if the state is  “x” do “y”. This can be accessed by the render() method that takes input data and returns what to display. 
+To pass data into a component one needs to pass a prop argument which then can be referenced inside the function body using braces. Example: 
+class HelloMessage extends React.Component {
+  render() {
+    return <div>Hello {this.props.name}</div>;
+  }}
+ root.render(<HelloMessage name="Justyna" />);
+Output: Hello Justyna
+In the above code React returns an html component.The HTML in this case depends on a name that is passed. If I change the name from Justyna to Anna I do not need to then change anything in the HTML code as thanks to React it knows to change itself when I pass something different (in this case another name).
+
+What is the benefit of using React?
+The benefit of using React it's not only the library itself but the massive ecosystem that surrounds it. It lets users evolve naturally using the open source community. No matter what the user wants to do there is an open source library that helps to get it done. Another bonus is React Native that helps to build mobile apps. 
+
+What is its virtual DOM?
+It is a programming concept where the “virtual” representation of UI is kept in a memory and synced with the “real” DOM by a library such as ReactDom. The user can tell React what state they want the UI to be and it makes sure DOM matches the state.
+
+Why would someone choose it over the standard HTML / CSS stack?
+Building things with React components allows the user to make small incremental changes to the structure without the risk of breaking something outside of the component or needing to change the entire code. React also allows to re-render the application automatically, every time when the state changes.when writing for example HTML, CSS and JS codes, each time when some form of state changes it needs refreshing and rerendering each time, which might lead to bugs.
+
+2.What are Props? What is State? What is the difference between them? (10 marks)
+
+PROPS
+Arguments that are passed into React components are called props. “Props” stands for “properties” and as all elements created in React are Java Script objects. The properties are passed into the component in a similar way as arguments are passed into a function. 
+Props should not change. Since propes are passed in and they cannot change, any React component that only uses props will  render the same output, given the same input. 
+Sometimes component can have default props, so if the prop is not pass through  it can still set. For example: 
+class Welcome extends React.Component {
+ render() {
+   return <h1>Hello {this.props.name}</h1>;
+ }}
+Welcome.defaultProps = {
+ name: "world",
+};
+ If  Welcome is called without the name it will render <h1>Hello world</h1>
+
+STATES
+States are build-in React objects and like props they hold the information about the components. The component state can be changed and each time it changes the component re-renders. When the component needs to keep track of information between renderings, the component can itself create update and use state. 
+If for example we use updateCount
+updateCount() {
+ this.setState((prevState, props) => {
+   return { count: prevState.count + 1 }
+ });
+}
+The state is changed by the number of clicks (similarly when during the class we set the component using setState to change the text appearing  each time we clicked the button).
+render() {
+ return (<button
+           onClick={() => this.updateCount()}
+         >
+           Clicked {this.state.count} times
+         </button>);
+} 
+onClick={() => this.updateCount()}  means that when the button is clicked the method updateCount will be called.
+
+What is the difference between State and Prop? 
+props contain the information set by the parent component (default can be set as well as mentioned above) and should not be changed
+data is passed from parent to child
+states contain a “private” information or the component to change, initialise and use on its own. 
+It is reserved for interactivity (data changes over time).
+	
+3. What are React Hooks? How do they differ from existing lifecycle methods? (10 marks)
+
+​​Each component in React has a lifecycle which you can monitor and manipulate during its three main phases. The three phases are: Mounting, Updating, and Unmounting.
+Common lifecycle methods are: 
+()render- only required within the class component. It happens during mounting and updating and it handles the rendering into the UI. The state cannot be modified or updated with ()render method. 
+componentDidMount() - components states can be modified. If a user needs to load data from a remote endpoint API can be called.
+componentDidUpdate() - it is mostly used to update the DOMin response to prop or state change. 
+componentDidUnmount() - cleanup actions or canceling API calls can be performed. 
+Hooks let the user use state and other React features like lifecycle without writing a class. They can only be used inside the function component. 
+Benefits of using hooks are: 
+help to write more concise code
+allow user  to reuse stateful logic without changing components hierarchy
+Common lifecycle hooks:
+useState() - it is used to update state. 
+useEffect() - it is used to perform functions like subscription, data fetching, updating DOM from React components before. 
+Differences:
+One of the main differences between Hooks and Lifecycle methods is that hooks are incorporated within function based components and Lifecycle methods within class based components. Lifecycle methods also require the constructor to initialise, when hooks do not. 
+
+4. Design the perfect door - what should it look like, what are the components for it? What design heuristics should it follow, and how does your design match? What made you choose this design? (20 marks).
+Consider in particular (likely need to do independent learning): who are your stakeholders? What are their personas? What are the doors requirements and how will your stakeholders benefit from your solution?
+
+Laboratory doors. They are made of heavy duty metal  with a digital padlock that closes and opens the door. 
+
+Door components
+Controls:  eye scan/optional code type
+Rules: access for permitted users based on eye scan/unique code set 
+Feedback: the door control light changes the colour (red-closed, green-open). 
+
+Interaction map
+Intend: Safely locked door
+Action: unlocking with an eye scan/ closing automatically 
+Result: door safely locked 
+
+User/system pattern: Intent→controls→action→rules→feedback→ result
+
+Colours
+Colours are decided based on colour theory, colour psychology, and creating a better user experience. 
+Colours used: silver/ gray
+Specifically, the main colour is Silver Sand (#BDC4C7)
+
+Silver Sand is associated with industrial, sleek, high-tech and modern style meanings, as well as elegant, sophisticated and elegant.  From a color psychology perspective, silver is respectable and courteous, dignified, self-controlled, responsible, patient and organized. 
+
+The stakeholders are the research lab workers and security staff members. Only the authorised staff members can enter the lab and unauthorised staff will not be able to enter.
+The other benefit is that the research is kept behind the door which makes it safe and uncontaminated. 
+
+ 5.  What is Angular, and how does it differ from React? (10 marks)
+
+Angular is an open source Java Script framework used for building single- page applications using HTML and TypeScript. Angular is written in TypeScript. It is designed for web, desktop and mobile platforms. Building blocks of Angular framework Angular components organized in NgModules. 
+
+Angular features:
+- Document Object Model (DOM) - Angular uses regular DOM. It will update the entire tree structure of HTML tags until it reaches the data to be updated. 
+- TypeScript: defines a set of types to JS that helps users to write JS that is easier to understand. All the TypeScript code compiles down to basic JS that can run on any platform. It offers better syntax structure making the code easier to understand and maintain.
+
+Typescript can be installed as npm package using: npm install -g typescript 
+
+- Data binding is a process that allows ussr to manipulate web page elements using the web browser. Employs dynamic html and does not require complex scripting or programming. It is used for web pages that contain interactive components like games, forms, tutorials etc. Incremental display of a web page makes data binding extremely convenient when pages contain large amount of data. 
+Angular uses two-way data binding. 
+  - Any changes made in the UI element is reflecting in the corresponding model state.
+  - Any changes made in the model state are reflected in the UI.
+This allows the framework to the term to the model data via  the controller. 
+
+- Testing: Angular uses Jasmine to run various tests. Jasmine framework allows various functionalities to write different kinds of test cases. 
+Karma is a task runner for the test that use a configuration file to set the startup, reporters and testing framework. 
+
+Differences: 
+- Angular architecture is  component- oriented when React follows Model-View- Control (MVC) architecture. 
+- Angular is written in TupeScript language and React is written in Java Script language
+- Angular supports two-way data binding and React one-way data binding 
+- Angular framework is used to build mobile apps and single- web application. React is used to build web applications, hybrid apps and native applications
+- Angular uses single tool for testing a complete project. React requires more than one tool for testing a complete project. 
+
+6. 	 Please describe Redux in as much detail - especially consider: why would someone use it? What is it? What's the benefit of using it? Are there any potential drawbacks to using it? How can it be added to a project? What is dispatch, provider, actions, etc?(15 marks)
+
+What is Redux? 
+
+React uses Redux to build the user interface. It allows React components to read data from the Redux Store. 
+
+The core problem with React state management. If for example we have an app component and subcomponent and if we want to change for example text between the app component and the subcomponent we cannot do it directly. The parent component needs to be informed (text needs to be changed there). 
+
+Redux has a different approach. There is a View/Application and in this application in any given component user can dispatch actions. For example one action might be to change text (to use the above example). This Action then is run through a Reducer. Reducer takes the action, handles it and then takes the old state and manipulates it in a way that it now reflects this action. The old state adds or executes that single action on the old state and gives the user back the new state. The old state is taken as a basis and allows the user to create a brand new state (kind of a copy of an old state) with the employed changes. New state is then stored in the Store. There is only one Store that holds it. The application can then subscribe to that Store. Whenever the store is updated, and the new status passed to the store the store will automatically send  it to all the components interested and the application will update.
+
+Dispatch is a function of Redux store. To trigger a state change dispatch needs to be called store.dispatch
+
+Why would someone use it? What's the benefit of using it? 
+Redux makes it easier to reason about changes occurring in the application as it allows the user to manage the app's state in a single place. It makes the app more traceable and predictable.
+
+Are there any potential drawbacks to using it?
+- Excessive memory use
+- Time- consuming
+- Restricted design
+- Increased complexity
+
+7.  Please describe Linux in as much detail as possible (feel free to use notes made during lessons, or draw from the lesson directly!). Especially consider:what is its history? Why would someone use it over other existing operating systems? How does Windows and Mac OSX differ toLinux? How does Linux function, what are some unique features to it? How can it be installed today? (10 marks)
+
+Linux is one of the most popular UNIX-like operating systems. It is free and open-source software. As any operating system it manages the communication between software and hardware. 
+
+Linux unique features:
+- Portable environment ( operates on variety of hardware platforms, no problem with compatibility)
+- Free and open-source
+Command-line interface (it includes essential programs that users can utilise to send command to operating system)
+- End- to-end encryption (similarly to Windows it has Graphical User Interface
+- Configure keyboards to different languages
+- Frequent new updates
+- Extremely flexible (benefits variety of embedded systems, desktop applications, server applications)
+- Lightweight infrastructure (smaller memory footprint, uses less storage space)
+
+How does Windows and Mac OSX differ to Linux?
+
+- File system
+Windows uses ‘drives’. There are usually C and D drives that store all the computer files, with external devices: Cd’s, USBs.
+Mac and Linux have similar systems that come from UNIX. In the OS there are no drivers. Everything in the computer is considered a file (single root directory).
+- Shell
+Both Linux and Mac have BASH as their default shell and Windows has its own one that uses different syntax. 
+- Package managers
+Mac/Linux come with packages installed as a default. Windows does not come with a package manager as a default. It needs to be installed. 
+- Software compatibility
+Windows is  the most widely used OS and most software is adapted to it.Linux was not compatible with many programs but this started to change recently with the most popular distros like Ubuntu.
+- Security 
+Linux is considered the most stable and secure. Bugs can be identified and worked on quicker. 
+WIndows is considered least secure. As its the most popular OS  most malware is developed to attack Windows OS. 
+
+Most used commands in Linux: 
+ls- lists files and folder in current directory
+cp- copy file
+pwd- print the current working directory to the terminal
+cd- change directory
+mDir- create a directory
+clear- clear the terminal window
+rm- removed specified file 
+rmDir- remove directory 
+
+Why would someone use it over other existing operating systems? 
+
+One of the main reasons why someone would use a Linux operating system over another exciting one  is the fact that Linux is everywhere (home appliances, desktops, cars, smartphones etc). It has been around since mid 1990-s and its user- base spans the globe. 
+Moreover it runs most of the internet, world’s stock exchange and world’s top supercomputers. It is also one of the most reliable and secure operating systems. 
+Linux offers one of the easiest installation of all operating systems.
+
+8.  What are they, and which is better between Class components and Functional components? Provide a discussion. Consider:
+Go deep - how does each one work? What are the unique properties or behaviours to each one? Why would someone use one over the other? What are the advantages and disadvantages of each one? Who benefits from these advantages and disadvantages, who is it suitable for? (10 marks)
+
+In React UI is built out of components which use JSX to return React elements ( they describe what the DOM tree should look like). The user can choose between a functional component or a class component when building components. 
+
+Class components were the only way to track state and lifecycle on a React component. Function components were considered "state-less".
+Functional component - it is a function that can receive properties as an argument. It returns JSX when executed and properties can be set to them to make them reusable. 
+Limitations:
+-side effects cannot be executed
+- no possibility to process data between renders
+Class component - implements the render method other than the syntax. 
+Mounting the component: When React stumbles upon a class component it renders it and creates an instance of the class. Then it calls the render method of this instance and returns JSX (a description of what this component will look like on the screen). For any separate location of the screen when the component is displayed, separate instances of the component are created. After a class component is mounted and the instances have been created React will execute a render method on instances in case it needs to re-render the component. 
+
+Why would someone use one over the other?
+Few years ago class components were capable of things that were impossible with functional components. With the addition of Hooks, Function components are now almost equivalent to Class components. With hooks in functional components logic can be extracted and easily shared across components. 
+However, class components might still be useful when for example dealing with an old legacy project. 
+
+
+
+
